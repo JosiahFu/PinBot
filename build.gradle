@@ -1,8 +1,9 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.0.0'
+    id 'application'
 }
 
-group = 'archives.tater.unbalancedmusket'
+group = 'archives.tater'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -20,4 +21,8 @@ test {
 }
 kotlin {
     jvmToolchain(21)
+}
+
+application {
+    mainClass = 'archives.tater.pinbot.Main'
 }

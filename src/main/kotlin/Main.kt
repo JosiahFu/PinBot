@@ -1,8 +1,11 @@
-package archives.tater.unbalancedmusket
+@file:JvmName("Main")
+
+package archives.tater.pinbot
 
 import dev.kord.core.Kord
 import dev.kord.core.behavior.interaction.respondPublic
 import dev.kord.core.entity.effectiveName
+import dev.kord.core.event.gateway.ReadyEvent
 import dev.kord.core.event.interaction.MessageCommandInteractionCreateEvent
 import dev.kord.core.on
 import io.github.cdimascio.dotenv.Dotenv
@@ -30,6 +33,10 @@ suspend fun main() {
                 }
                 interaction.target.pin("Pin Bot")
             }
+        }
+
+        on<ReadyEvent> {
+            println("Logged in!")
         }
 
         login()
